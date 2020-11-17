@@ -1,6 +1,7 @@
-import { IGetPlayerData, IAdvancedNotifcation } from "./@types/client";
+import { IGetPlayerData } from "./@types/client";
 import { Common } from "./common/common";
 
+export as namespace Client;
 export class Client extends Common {
 
   /**
@@ -29,5 +30,4 @@ export class Client extends Common {
    * @param saveToBreif
    * @param hudColorIndex
    */
-  ShowAdvancedNotification(): IAdvancedNotifcation;
-}
+  ShowAdvancedNotification(sender: string, subject: string, msg: string, textureDict: string, iconType: number, flash: boolean, saveToBrief: boolean, hudColorIndex: number ) 

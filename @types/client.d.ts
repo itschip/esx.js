@@ -10,7 +10,7 @@ export declare interface IGetPlayerDataJob {
 
 export declare interface IAdvancedNotifcation {
   sender: string; 
-  subject: string; 
+  subject: string;  
   msg: string; 
   textureDict: string; 
   iconType: number; 
