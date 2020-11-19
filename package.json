@@ -1,11 +1,8 @@
 {
   "name": "esx.js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A type wrapper for ESX (es_extended) framework in FiveM",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/itschip/esx.js.git"
