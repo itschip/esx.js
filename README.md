@@ -1,6 +1,14 @@
 # ESX.js
-
-<img src="https://i.imgur.com/lj2RCGp.jpg" width="300" height="300"/>
+<div style="margin: auto 0; width: 100%">
+  <img src="https://i.imgur.com/lj2RCGp.jpg" width="300" height="300"/>
+  <div>
+  <a href="https://www.npmjs.com/package/esx.js">
+    <img src="https://img.shields.io/npm/v/esx.js?style=flat" alt="npm version">
+  </a>
+  <a href="https://www.npmjs.com/package/esx.js">
+    <img src="https://img.shields.io/npm/dm/esx.js?style=flat">
+  </a>
+</div>
 
 ## About
 
