@@ -1,5 +1,5 @@
-import { Game, IGetPlayerData } from "./@types/client";
-import { IAccount, XPlayer } from "./@types/server";
+import { Game, IGetPlayerData, Scaleform, Streaming, Ui } from "./@types/client";
+import { XPlayer } from "./@types/server";
 import { Common } from "./common/common";
 
 
@@ -58,6 +58,12 @@ export class Client extends Common {
   TriggerServerCallback(name: string, cb: Function, args: any)
 
   Game: Game;
+
+  Scaleform: Scaleform;
+
+  Streaming: Streaming;
+
+  Ui: Ui;
 }
 
 

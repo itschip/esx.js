@@ -122,12 +122,236 @@ export class Game {
   /**
    * This function spawns a local vehicle, which is only visible to the local player and no one else.
    * @param modelOrHash You can either specify a model, for example blista, or a vehicle hash.
-   * @param coords The coords where the vehicle should be spawned. You can also parse an vector type without any issues
+   * @param coords The coords where the vehicle should be spawned.
    * @param heading The heading of the spawned vehicle, must contain a decimal
    * @param cb The returned function when the vehicle has been spawned. The invoked function has one argument, which is the vehicle handle
    */
   SpawnLocalVehicle(modelOrHash: string | number, coords: Coords, heading: number, cb: Function)
 
+  /**
+   * This function spawns an object visible to everyone on the server.
+   * @param modelOrHash You can either specify a model, for example prop_cs_cuffs_01, or a object hash
+   * @param coords The coords where the object should be spawned. 
+   * @param cb The returned function when the object has been spawned. The invoked function has one argument, which is the object handle.
+   */
+  SpawnObject(modelOrHash: string | number, coords: Coords, cb: Function);
+
+  /**
+   * This function spawns an vehicle visible to everyone on the server.
+   * @param modelOrHash You can either specify a model, for example blista, or a vehicle hash.
+   * @param coords The coords where the vehicle should be spawned. 
+   * @param heading The heading of the spawned vehicle, must contain a decimal
+   * @param cb The returned function when the vehicle has been spawned. The invoked function has one argument, which is the vehicle handle
+   */
+  SpawnVehicle(modelOrHash: string | number, coords: Coords, heading: number, cb: Function)
+
+  /**
+   * This function teleports an entity.
+   * @param entity The entity to teleport
+   * @param coords The coords to be teleported to.
+   * @param cb The returned function when the entity has been teleported
+   */
+  Teleport(entity: string, coords: Coords, cb: Function)
+
+  Utils: GameUtils
+}
+
+declare class GameUtils {
+  /**
+   * This function draws 3D text on the specified coords. Must be drawn every frame, ideally in a loop. size and font arguments are optional.
+   * @param coords The coords where the text should be.
+   * @param text The text that will be display.
+   * @param size The text size.
+   * @param font The font type.
+   */
+  DrawText3D(coords: Coords, text: string, size: number, font: string)
+}
+
+export class Scaleform {
+  /**
+   * This function shows the 'Breaking News' scaleform used multiple times in the campaign.
+   * @param title Title text
+   * @param msg Message text, supports HTML syntax
+   * @param bottom Footer text, supports HTML syntax
+   * @param sec Time in seconds to show scaleform
+   */
+  ShowBreakingNews(title: string, msg: string, bottom: string, sec: number)
+
+  /**
+   * This function displays a freemode message for the player.
+   * @param title Title text
+   * @param msg Message text
+   * @param sec Time in seconds to show scaleform
+   */
+  ShowFreemodeMessage(title: string, msg: string, sec: number)
+
+  /**
+   * This function shows a basic popup warning, like the quit confirmation warning.
+   * @param title Title text
+   * @param msg Message text
+   * @param bottom Footer text
+   * @param sec Time in seconds to show scaleform
+   */
+  ShowPopupWarning(title: string, msg: string, bottom: string, sec: number)
+
+  /**
+   * This function starts the traffic scaleform movie used in the campaign.
+   * @param sec Time in seconds to show scaleform
+   */
+  ShowTrafficMovie(sec: number)
+
+  Utils: ScaleformUtils
+}
+
+declare class ScaleformUtils {
+  /**
+   * This function requests and returns a scaleform handle for the movie parsed.
+   * @param movie The movie name
+   */
+  RequestScaleformMovie(movie: string)
+}
+
+export class Streaming {
+  /**
+   * This function requests and returns the nimation directory parsed. A very common usage it to play animations using TaskPlayAnim(). You can use Alex Guirre's Animations List found on Github.
+   * 
+   * https://alexguirre.github.io/animations-list/
+   * @param animDict 
+   * @param cb 
+   */
+  RequestAnimDict(animDict: string, cb: Function)
+
+  /**
+   * This function requests and returns the animation set parsed. Animation sets provide movement styles, commonly used with SetPedMovementClipset().
+   * @param animSet 
+   * @param cb 
+   */
+  RequestAnimSet(animSet: any, cb: Function)
+
+  /**
+   * This function requests and returns the specified model parsed, a very common usage is spawning objects, etc.
+   * @param model 
+   * @param cb 
+   */
+  RequestModel(model: string | number, cb: Function)
+
+  /**
+   * 
+   * @param assetName 
+   * @param cb 
+   */
+  RequestNamedPtfxAsset(assetName: string | number, cb: Function)
+
+  /**
+   * This function requests and returns the texture directory parsed. This is commonly used when loading sprites, then draw them on screen using DrawSprite(), an example would be drawing a speedometer.
+   * @param textureDict 
+   * @param cb 
+   */
+  RequestStreamedTextureDict(textureDict: string | number, cb: Function)
+  
+  /**
+   * 
+   * @param weaponHash 
+   * @param cb 
+   */
+  RequestWeaponAsset(weaponHash: string | number, cb: Function)
+}
+
+export class Ui {
+  /**
+   * This function shows an inventory item notification.
+   * @param add 
+   * @param item 
+   * @param count 
+   */
+  ShowInventoryItemNotification(add: any, item: string | number, count: number)
+
+  Hud: HUD
+
+  Menu: MENU
+}
+
+declare class HUD {
+  /**
+   * This function registers a HUD element.
+   * @param name 
+   * @param index 
+   * @param priority 
+   * @param html 
+   * @param data 
+   */
+  RegisterElement(name: string, index: number, priority: string, html: any, data: any)
+
+  /**
+   * This function removes a HUD element.
+   * @param name 
+   */
+  RemoveElement(name: string | number)
+
+  /**
+   * This function sets the HUD opacity.
+   * @param opacity 
+   */
+  SetDisplay(opacity: number)
+
+  /**
+   * This function updates HUD elements.
+   * @param name 
+   * @param data 
+   */
+  UpdateElement(name: string , data: any)
+}
+
+declare class MENU {
+  /**
+   * This function closes a menu.
+   * @param type 
+   * @param namespace 
+   * @param name 
+   */
+  Close(type: string | number, namespace: string, name: string)
+
+  /**
+   * This function closes all open menus.
+   */
+  CloseAll()
+
+  /**
+   * This function gets all opened menus.
+   * @param type 
+   * @param namespace 
+   * @param name 
+   */
+  GetOpened(type: string | number, namespace: string, name: string)
+
+  /**
+   * This function checks if a menu is open.
+   * @param type 
+   * @param namespace 
+   * @param name 
+   */
+  IsOpen(type: string | number, namespace: string, name: string)
+
+  /**
+   * This function opens a menu.
+   * @param type 
+   * @param namespace 
+   * @param name 
+   * @param data 
+   * @param submit 
+   * @param cancel 
+   * @param change 
+   * @param close 
+   */
+  Open(type: string | number, namespace: string, name: string, data: any, submit: any, cancel: any, change: string, close: string)
+
+  /**
+   * This function registers a menu type.
+   * @param type 
+   * @param open 
+   * @param close 
+   */
+  RegisterType(type: string | number, open: any, close: any)
 }
 
 export declare interface IGetPlayerData {
