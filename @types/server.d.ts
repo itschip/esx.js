@@ -367,13 +367,13 @@ declare interface IGetJob {
   grade_name: string;
   grade_label: string;
   grade_salary: number;
-  skin_male: [];
-  skin_female: []
+  skin_male: any[];
+  skin_female: any[]
 }
 
 declare interface IGetLoadout {
   name: string;
   ammo: number;
   label: string;
-  components: [];
+  components: any[];
 }
