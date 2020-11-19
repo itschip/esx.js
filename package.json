@@ -1,6 +1,6 @@
 {
   "name": "esx.js",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A type wrapper for ESX (es_extended) framework in FiveM",
   "main": "index.js",
   "repository": {
