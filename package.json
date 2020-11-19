@@ -10,6 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/itschip/esx.js.git"
   },
+  "keywords": [
+    "fivem",
+    "esx",
+    "es_extended",
+    "types",
+    "gtav",
+    "js",
+    "ts",
+    "citizenfx",
+    "typescript",
+    "javascript"
+  ],
   "author": "Christopher Gjelten (chip)",
   "license": "MIT",
   "bugs": {
