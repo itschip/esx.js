@@ -1,5 +1,7 @@
 # ESX.js
 
+<img src="https://i.imgur.com/lj2RCGp.jpg" width="300" height="300"/>
+
 ## About
 
 This is a JavaScript/TypeScript wrapper for the ESX (es_extended) framework in FiveM. 
