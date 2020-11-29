@@ -370,6 +370,7 @@ export declare interface IGetPlayerData {
 declare interface IGetPlayerDataJob {
   name: string;
   grade: number;
+  grade_label: string;
   grade_name: string;
   grade_salary: number;
   label: string;
