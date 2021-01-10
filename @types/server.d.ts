@@ -1,4 +1,7 @@
 export class XPlayer {
+
+  source: number;
+
   /**
    * This function adds account money.
    * @param account An valid account, a list of valid accounts can be found in the configuration file
