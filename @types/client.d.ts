@@ -19,8 +19,6 @@ export class Game {
    */
   GetClosestObject(coords: Coords, modelFilter: string | string[]): [number, number];
   
-  
-  
   /**
    * This function returns the closest ped handle, and distance to the ped.
    * @param coords Coords to search at
