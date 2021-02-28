@@ -257,7 +257,7 @@ export class Streaming {
   RequestWeaponAsset(weaponHash: string | number, cb: Function)
 }
 
-export class Ui {
+export class UI {
   /**
    * This function shows an inventory item notification.
    * @param add 
@@ -268,7 +268,7 @@ export class Ui {
 
   Hud: HUD
 
-  Menu: MENU
+  Menu: Menu
 }
 
 declare class HUD {
@@ -302,7 +302,7 @@ declare class HUD {
   UpdateElement(name: string , data: any)
 }
 
-declare class MENU {
+declare class Menu {
   /**
    * This function closes a menu.
    * @param type 
