@@ -1,4 +1,4 @@
-import { Game, IGetPlayerData, Scaleform, Streaming, Ui } from "./@types/client";
+import { Game, IGetPlayerData, Scaleform, Streaming, UI } from "./@types/client";
 import { XPlayer } from "./@types/server";
 import { Common } from "./common/common";
 
@@ -67,7 +67,7 @@ export class Client extends Common {
 
   Streaming: Streaming;
 
-  Ui: Ui;
+  UI: UI;
 }
 
 // ================== SERVER ================================
