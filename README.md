@@ -35,7 +35,10 @@ import { Client } from 'esx.js'
 
 let ESX: Client = null
 
-emit('esx:getSharedObject', (obj: Client) => (ESX = obj));
+setImmediate (() => {
+  emit('esx:getSharedObject', (obj: Client) => (ESX = obj));
+})
+
 ```
 
 ### `Server`
