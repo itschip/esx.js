@@ -9,13 +9,13 @@ export class Common {
    * This function dumps the given array to a readable string with a tree structure.
    * @param array 
    */
-  DumpTable(array: any)
+  DumpTable(array: any[])
 
   /**
    * This function gets a random string, with the defined length.
    * @param length 
    */
-  GetRandomString(length: string | number)
+  GetRandomString(length: number)
 
   /**
    * 
