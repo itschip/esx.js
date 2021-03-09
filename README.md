@@ -50,4 +50,11 @@ let ESX: Server = null
 emit('esx:getSharedObject', (obj: Server) => (ESX = obj));
 ```
 
+## You can also import a single type:
+```js
+import { XPlayer } from 'esx.js/@types/server'
+
+const Player: XPlayer
+```
+
 ### That's it. Now you are ready to rock the world!
