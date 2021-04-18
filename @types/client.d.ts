@@ -355,6 +355,7 @@ declare class Menu {
 export declare interface IGetPlayerData {
   job: IGetPlayerDataJob;
   identifier: string;
+  maxWeight: number;
   inventory: IGetPlayerDataInventory[];
   loadout: any[];
   lastPosition: {
