@@ -5,13 +5,11 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+    branches: [ main ]
+    
 jobs:
   build:
-  
+    name: Create Release
     runs-on: ubuntu-latest
 
     steps:
